@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>COMputer Perception LAB (COMPLAB): Teaching</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="#">COMputer Perception LAB (COMPLAB)</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="teaching.html">Teaching</a></li>
+						<li><a href="people.html">People</a></li>
+						<li><a href="mailto:acruz37@csub.edu" class="button special"><i class="fa fa-envelope"></i> Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+                        <h2>CMPS 3240 Lab</h2>
+						<p>Performance and Benchmarks</p>
+					</header>
+					
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>No requirements for this lab.</li>
+                    </ul>
+                    
+                    <h3>Prerequisities</h3>
+                    <ul>
+                        <li>Understanting of clock rate, CPI and program performance.</li>
+                        <li>Understanting of different CPI for various instruction types.</li>
+                    </ul>
+                    
+                    <h3>Objectives</h3>
+                    <ul>
+                        <li>Calculate execution time of a program on different processors, that have varying CPI per instruction type.</li>
+                        <li>Familiarize yourself with benchmarking a processor.</li>
+                    </ul>
+                    
+                    <h3>Prelab</h3>
+                    <p>This should be completed before the start of lab. In class, we discussed two ways the cycles per instruction (CPI) for classes of instructions could be used for comparing performance: the same program compiled with different compilers and the same program ran on different CPUs. In class, an example was given for the first use. For this part of the lab, we will explore the second use.</p>
+                    
+                   <p>We will look at four classes of instructions on two machines: machine 1 and machine 2. The program has the same instruction count per class on both machines (in the real world, this is not always the case, but this makes the evaluation easier). Given the following data, calculate the clock cycles for running the program on machines 1 and 2. </p>
+                    
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Machine 1</th>
+                                    <th>Machine 2</th>
+                                    <th>Instruction count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Class A</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Class B</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>Class C</td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>Class D</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p> Show your work for calculating the clock cycles in your lab writeup. Also answer the following questions in your lab writeup:</p>
+                    
+                    <ol>
+                        <li>Which machine has the better clock cycles for the program?</li>
+                        <li>How much better is that machine?</li>
+                    </ol>
+                    
+                    <h3>Approach</h3>
+                    <p>For this part of the lab, you will be looking at the SPECint 2006 benchmark results for the lab machines used in Science III. The machines you will be looking up are:</p>
+                    <ul>
+                        <li>Dell Precision T3400 (Intel E8600, 3.33 GHz), a desktop workstation, </li>
+                        <li>Dell Precision T7400 (Intel Xeon X5272, 3.40 GHz), a desktop workstation using a Xeon processor rather than a Pentium processor, and </li>
+                        <li>Dell Precision Tower 7910 (Intel Xeon E5-2699 v3), a more powerful machine intended to be a server.</li>
+                    </ul>
+                    <p>The first two machines were previously used in rooms Sci III 240, 311, 315 and 324 by the department. </p>
+                    <p> Go to the SPEC website: <a href="http://www.spec.org/">http://www.spec.org/</a>.</p>
+                    <p> Select Benchmarks from the top menu, then select "Retired Benchmarks" from the pulldown menu. We want to look at "CPU2006" for this experiment, which should be among the first links on the page. This will take you to an explanation of the CPU2006 benchmark. Scroll down to the "Results" heading and click on "Search across all SPEC CPU® 2006 results".</p>
+                    <p>The search type should be "Hardware Vendor" by default. In the search field, enter Dell and execute the search. This will bring up all benchmarked Dell machines. </p>
+                    <p> When you find a profiled system, select the HTML report. The hardware that was installed on the profiled system may not match the lab configurations, but that's okay for the purposes of this lab. Write a paragraph summarizing the CPU2006 results for each Dell model that has an entry. Note: the "CINT2006 Rates" section is a metric for the throughput (multiple tasks at once) while the "CINT2006" section is a metric for the speed (single task at a time).</p>
+                    <p>Go back to the report for each Dell model and find the CPU model. Open another tab/browser window and go back to the CPU2006 simple search. Change the search type to "Processor" and search for the CPU model. Select one other machine from the list and write a paragraph comparing its results to the Dell model. Repeat this for each Dell model that had a result in CPU2006. </p>
+                    <p>Some questions that will guide your analysis:</p>
+                    <ul>
+                        <li>Are there benchmarks that a server should perform better at, versus a desktop workstation?</li>
+                        <li>In what situations does a Xeon outperform a Pentium</li>
+                        <li>Considering the number of cores, is the difference between "CINT2006 Rates" and "CINT 2006" as you would expect?</li>
+                    </ul>
+                    <p>Include these comparisons in your lab report.</p>
+				</div>
+			</section>	
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row double">
+						<div class="6u">
+							<div class="row collapse-at-2">
+								<div class="6u">
+									<h3>Navigation</h3>
+									<ul class="alt">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="teaching.html">Teaching</a></li>
+										<li><a href="people.html">People</a></li>
+									</ul>
+								</div>
+								<div class="6u">
+									<h3>Campus Links</h3>
+									<ul class="alt">
+										<li><a href="http://cs.csubak.edu/">Dept. of CEE/CS</a></li>
+										<li><a href="http://www.csub.edu/nsme/">College of NSME</a></li>
+										<li><a href="http://www.csub.edu/">CSU Bakersfield</a></li>
+										<li><a href="http://moodle.cs.csubak.edu/moodle/">Moodle</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="6u">
+							<h2>COMputer Perception LAB (COMPLAB)</h2>
+							<p>Science Building III 328<br>
+							California State University, Bakersfield<br>
+							9001 Stockdale Hwy<br>
+							Bakersfield, CA 93311</p>
+							<ul class="icons">
+								<li><a href="mailto:acruz37@csub.edu" class="icon fa-envelope"><span class="label">E-mail</span></a></li>
+								<li><a href="https://www.linkedin.com/pub/albert-cruz/23/40a/5aa" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://www.researchgate.net/profile/Albert_Cruz2" class="icon"><i class="ai ai-researchgate" style="font-size:1.5em;"></i></a></li>
+								<li><a href="https://scholar.google.com/citations?user=kJwWxtQAAAAJ&hl=en" class="icon">
+									<i class="ai ai-google-scholar" style="font-size:1.5em;"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<ul class="copyright">
+						<li>Albert C. Cruz CCA 3.0</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: nigibop, MT Enthusiast Network</li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
